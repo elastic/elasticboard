@@ -1,0 +1,23 @@
+pingboard:
+        client_id: <%= ENV['PINGBOARD_CLIENT_ID'] %>
+        client_secret: <%= ENV['PINGBOARD_CLIENT_SECRET'] %>
+        #custom_fields:
+                #f01234:
+                #  name: "city"
+                #  type: "keyword"
+                #f56789:
+                #  name: "state_and_country"
+                #  type: "text"
+
+maps:
+        service: "google"
+        key: <%= ENV['GOOGLE_MAPS_KEY'] %>
+        #fields:
+        #- "city"
+        #- "state_and_country"
+
+elasticsearch:
+        hosts:
+                - "localhost:9200"
+        #user: "superuser"
+        #secret: <%= ENV['ELASTICSEARCH_SECRET'] %>
