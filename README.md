@@ -2,6 +2,8 @@
 
 [Pingboard](pingboard.com) adapter for [Elasticsearch](https://www.elastic.co/products/elasticsearch), enhancing locations with geocoding.
 
+Sample tile map visualization using [Kibana](https://www.elastic.co/products/elasticsearch):
+
 ![preview](preview.png)
 
 ## Installation
