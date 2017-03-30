@@ -9,9 +9,9 @@ pingboard:
                 #  name: "state_and_country"
                 #  type: "text"
 
-maps:
-        service: "google"
-        key: <%= ENV['GOOGLE_MAPS_KEY'] %>
+#maps:
+        #service: "google"
+        #key: <%= ENV['GOOGLE_MAPS_KEY'] %>
         #fields:
         #- "city"
         #- "state_and_country"

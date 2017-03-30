@@ -1,6 +1,6 @@
-# pyngboard
+# elasticboard
 
-Pingboard adapter for Elasticsearch, enhancing locations with geocoding.
+[Pingboard](pingboard.com) adapter for [Elasticsearch](https://www.elastic.co/products/elasticsearch), enhancing locations with geocoding.
 
 ![preview](preview.png)
 
@@ -17,7 +17,7 @@ pip3 install elasticsearch googlemaps pyyaml
 ```
 
 ## Usage
-See [pyngboard.yml](pyngboard.yml) for API configuration and custom mappings.
+See [elasticboard.yml](elasticboard.yml) for API configuration and custom mappings.
 
 ### Pingboard API
 Request an API service account to your account admin.
