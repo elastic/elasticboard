@@ -69,8 +69,14 @@ class Location(object):  # pylint: disable=too-few-public-methods
             self.logger.info(results)
         except googlemaps.exceptions.HTTPError as http_error:
             self.logger.error(http_error)
-        location = results[0]['geometry']['location']
-        self.data['lat'], self.data['lon'] = location['lat'], location['lng']
+            return
+        location = {}
+        if len(results):
+            geometry = results[0].get('geometry')
+            if geometry:
+                location = geometry.get('location')
+        if location:
+            self.data['lat'], self.data['lon'] = location['lat'], location['lng']
 
 
 class User(object):
