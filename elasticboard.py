@@ -229,8 +229,8 @@ def parse_config(config_file):
         return os.environ[env_var] + remaining_path
 
     yaml.add_constructor('!env', env_constructor)
-    with open('elasticboard.yml') as config_file:
-        return yaml.load(config_file)
+    with open(config_file) as config:
+        return yaml.load(config)
 
 
 def connect_elasticsearch_client(config, verbose=False):
@@ -257,12 +257,12 @@ def connect_maps_client(config):
 def main():
     """Main"""
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--config', 'elasticboard.yml')
+    parser.add_argument('-c', '--config', default='elasticboard.yml')
     parser.add_argument('--email', help='Filter by email')
     parser.add_argument('--recreate-index', action='store_true')
     parser.add_argument('-v', '--verbose', action='store_true')
     args = parser.parse_args()
-    config = parse_config(args.config_file)
+    config = parse_config(args.config)
     pingboard = Pingboard(config['pingboard'], verbose=args.verbose, email=args.email)
     connect_maps_client(config['maps'])
     connect_elasticsearch_client(config['elasticsearch'], verbose=args.verbose)
